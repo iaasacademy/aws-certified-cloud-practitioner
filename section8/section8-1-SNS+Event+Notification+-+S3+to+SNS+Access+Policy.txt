@@ -1,0 +1,20 @@
+{
+  "Version": "2008-10-17",
+  "Id": "example-ID",
+  "Statement": [
+    {
+      "Sid": "example-statement-ID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "ENTER THE ARN OF YOUR SNS TOPIC HERE",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "ENTER THE ARN OF THE S3 BUCKET THAT SHOULD SEND THE ALERT HERE"
+        }
+      }
+    }
+  ]
+}

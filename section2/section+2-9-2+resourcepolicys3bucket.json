@@ -1,0 +1,24 @@
+{
+    "Id": "Policy1729264917210",
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "Stmt1729264915683",
+        "Action": [
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:PutObject"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "[ARN of Bucket in Production Account]",
+          "[ARN of Bucket in Production Account]/*"
+        ],
+        "Principal": {
+          "AWS": [
+            "[ARN of IAM User in Development Account]"
+          ]
+        }
+      }
+    ]
+  }
